@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 91d19a2467ae8ec62ba28a47e354a6fb
+  productGUID: 83d9aa9eea19d2334ba9ddd2576c3ad8
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -515,7 +515,7 @@ PlayerSettings:
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
   playerPrefsMaxSize: 32768
-  ps4Passcode: aqyDOpGknQ4a5pgOTF87FzP54GO1hp0H
+  ps4Passcode: 6bjFsmZFrYprU7pJiDsTKcVUvf0W9DkD
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -584,7 +584,7 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Standalone: FUSION_LOGLEVEL_INFO;FUSION_WEAVER;FUSION2;FUSION_2;FUSION_2_0;FUSION_2_0_10;FUSION_2_OR_NEWER;FUSION_2_0_OR_NEWER
+    Standalone: FUSION_WEAVER;FUSION2;FUSION_2;FUSION_2_0;FUSION_2_0_10;FUSION_2_OR_NEWER;FUSION_2_0_OR_NEWER;FUSION_LOGLEVEL_INFO
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

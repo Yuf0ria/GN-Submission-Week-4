@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a29d1aa099cf8a91e83028da13775069
+=======
+guid: edc46b4192a332443a245fcfe0d04a2f
+>>>>>>> backup1
 labels:
 - FusionDefaultGlobal
 NativeFormatImporter:

@@ -3,7 +3,11 @@
     "TypeId": "NetworkProjectConfig",
     "PeerMode": 0,
     "LagCompensation": {
+<<<<<<< HEAD
         "Enabled": false,
+=======
+        "Enabled": true,
+>>>>>>> backup1
         "HitboxBufferLengthInMs": 200,
         "HitboxDefaultCapacity": 512,
         "CachedStaticCollidersSize": 64
@@ -36,18 +40,30 @@
         "ReliableDataTransferModes": 3
     },
     "HostMigration": {
+<<<<<<< HEAD
         "EnableAutoUpdate": true,
+=======
+        "EnableAutoUpdate": false,
+>>>>>>> backup1
         "UpdateDelay": 10
     },
     "EncryptionConfig": {
         "EnableEncryption": false
     },
     "NetworkConditions": {
+<<<<<<< HEAD
         "Enabled": false,
         "DelayShape": 0,
         "DelayMin": 0.15,
         "DelayMax": 0.15,
         "DelayPeriod": 0.0,
+=======
+        "Enabled": true,
+        "DelayShape": 0,
+        "DelayMin": 0.15,
+        "DelayMax": 0.30000001192092898,
+        "DelayPeriod": 0.009999999776482582,
+>>>>>>> backup1
         "DelayThreshold": 0.0,
         "AdditionalJitter": 0.05,
         "LossChanceShape": 0,

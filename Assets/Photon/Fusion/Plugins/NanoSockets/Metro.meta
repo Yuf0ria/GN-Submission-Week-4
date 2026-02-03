@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a1e70b75308b3ac1a96ee183b78f59f6
+=======
+guid: dce5e085f07a02e459b1e35da418a49e
+>>>>>>> backup1
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

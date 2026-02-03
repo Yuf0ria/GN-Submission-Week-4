@@ -11,9 +11,15 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 1878438611, guid: 7de3b8b9e1263ad479e2d0c4261b7646, type: 3}
   m_Name: PhotonAppSettings
+<<<<<<< HEAD
   m_EditorClassIdentifier: Fusion.Realtime.dll::Fusion.Photon.Realtime.PhotonAppSettings
   AppSettings:
     AppIdFusion: 784b3585-8faf-4fab-a383-6d57454330d4
+=======
+  m_EditorClassIdentifier: 
+  AppSettings:
+    AppIdFusion: 16ca9a07-0112-40a9-ae71-ce187a636c59
+>>>>>>> backup1
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
