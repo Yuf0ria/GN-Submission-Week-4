@@ -13,7 +13,7 @@ using Fusion.Sockets;
 public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
 {
     #region Variables
-    //pubic(s)
+    //public(s)
     [SerializeField]public InputField hostInputField;
     [SerializeField]public InputField joinInputField;
     [SerializeField]public Button HostBtn;
@@ -24,8 +24,10 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     //onbtn click
     void Start()
     {
-        Button btn = HostBtn.GetComponent<Button>();
-        btn.onClick.AddListener(SetLobbyName);
+        Button _hostbtn = HostBtn.GetComponent<Button>();
+Button _joinbtn = JoinBtn.GetComponent<Button>();
+        _hostbtn.onClick.AddListener(SetLobbyName);
+_joinbtn.onClick.AddListener(JoinRoom);
     }
     #endregion
 
