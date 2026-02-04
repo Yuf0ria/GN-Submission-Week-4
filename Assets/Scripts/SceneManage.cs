@@ -8,11 +8,12 @@ using UnityEngine.SceneManagement;//remove is scene ref works
 using Fusion;
 using Fusion.Sockets;
 #endregion
-public class SceneManage : NetworkSceneManagerDefault, INetworkRunnerCallbacks, INetworkSceneManager
+public class SceneManage : NetworkSceneManagerDefault, INetworkRunnerCallbacks
 {
     //once joined
-    public void LoadScene()
+    public void OnLoadScene()
     {
+        //GetSceneRef("GameRoom");
         Runner.LoadScene(SceneRef.FromPath("Assets/Scenes/GameRoom.unity"), LoadSceneMode.Additive);
         Debug.Log("Scene Loaded Successfully");
     }
