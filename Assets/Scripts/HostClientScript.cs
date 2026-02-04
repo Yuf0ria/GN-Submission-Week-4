@@ -40,7 +40,7 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
         }
     }
 
-    private void StartGame(string lobbyName)
+    public void StartGame(string lobbyName)
     {
         if (HasStateAuthority)
         {
@@ -52,6 +52,8 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
                 IsVisible = true,
                 SceneManager = sceneManager,
             });
+//Check uf this works
+Debug.Log("StartGame(lobbyName) is Functionable");
         }
     }
     //if player is joining the host's room
