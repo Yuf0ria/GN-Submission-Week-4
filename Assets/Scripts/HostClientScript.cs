@@ -25,9 +25,9 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     void Start()
     {
         Button _hostbtn = HostBtn.GetComponent<Button>();
-Button _joinbtn = JoinBtn.GetComponent<Button>();
+        Button _joinbtn = JoinBtn.GetComponent<Button>();
         _hostbtn.onClick.AddListener(SetLobbyName);
-_joinbtn.onClick.AddListener(JoinRoom);
+        _joinbtn.onClick.AddListener(JoinRoom);
     }
     #endregion
 
@@ -54,14 +54,14 @@ _joinbtn.onClick.AddListener(JoinRoom);
                 IsVisible = true,
                 SceneManager = sceneManager,
             });
-//Delete comment if working
-Debug.Log("StartGame(lobbyName) is Functionable");
+            //Delete comment if working
+            Debug.Log("StartGame(lobbyName) is Functionable");
         }
     }
     //if player is joining the host's room
     public void JoinRoom()
     {
-        if (HasInputAuthority)
+        if (!HasInputAuthority)
         {
             Task.Run(async () => await JoinLobby());
         }
