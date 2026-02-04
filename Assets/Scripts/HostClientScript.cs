@@ -19,7 +19,6 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     [SerializeField]public Button HostBtn;
     [SerializeField]public Button JoinBtn;
     //private(s)
-    private SceneManage GameScene;
     #endregion
     #region Methods
     //onbtn click
@@ -45,14 +44,14 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     {
         if (HasStateAuthority)
         {
+            var sceneManager = new SceneManage();
             Runner.StartGame(new StartGameArgs
             {
                 SessionName = lobbyName,
                 IsOpen = true,
-                IsVisible = true
+                IsVisible = true,
+                SceneManager = sceneManager,
             });
-            //run scenemanage.cs
-            GameScene.OnPlayerClickedBtn();
         }
     }
     //if player is joining the host's room
