@@ -42,7 +42,7 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
 
     public void StartGame(string lobbyName)
     {
-        if (HasStateAuthority)
+        if (!HasInputAuthority)
         {
             var sceneManager = new SceneManage();
             Runner.StartGame(new StartGameArgs
@@ -52,7 +52,7 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
                 IsVisible = true,
                 SceneManager = sceneManager,
             });
-//Check uf this works
+//Delete comment if working
 Debug.Log("StartGame(lobbyName) is Functionable");
         }
     }
