@@ -1,17 +1,19 @@
+#region Assemblies
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;//remove is scene ref works
 using Fusion;
 using Fusion.Sockets;
-using System;
-public class SceneManage : NetworkSceneManagerDefault, INetworkRunnerCallbacks, INetworkSceneManager
+#endregion
+public class SceneManage : NetworkSceneManagerDefault, INetworkSceneManager
 {
     //once joined
-    protected virtual void OnPlayerJoined()
+    public void OnPlayerClickedBtn()
     {
-        Runner.LoadScene("GameRoom");
+        
     }
     
     #region INetworkRunnerCallbacks
