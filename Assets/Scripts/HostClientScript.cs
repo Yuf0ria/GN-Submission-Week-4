@@ -11,9 +11,16 @@ using TMPro;
 
 public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
 {
-
+    #region Variables
     [SerializeField]public TMP_InputField hostInputField;
     [SerializeField]public TMP_InputField joinInputField;
+    [SerializeField]public Button HostBtn;
+    [SerializeField]public Button JoinBtn;
+    #endregion
+    #region Methods
+    //onbtn click
+    
+    #endregion
 
     //if player hosts the room
     public void SetLobbyName()
