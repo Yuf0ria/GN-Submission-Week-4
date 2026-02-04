@@ -1,6 +1,5 @@
 #region Assemblies
 //UI Script of the login Scene
-using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
@@ -8,6 +7,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Fusion;
 using Fusion.Sockets;
+using UnityEngine.SceneManagement;
+
 #endregion
 
 public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
@@ -16,50 +17,64 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     //public(s)
     [SerializeField]public InputField hostInputField;
     [SerializeField]public InputField joinInputField;
-    [SerializeField]public Button HostBtn;
-    [SerializeField]public Button JoinBtn;
+    [SerializeField]public Button hostBtn;
+    [SerializeField]public Button joinBtn;
     //private(s)
     #endregion
     #region Methods
     //onbtn click
     void Start()
     {
-        Button _hostbtn = HostBtn.GetComponent<Button>();
-        Button _joinbtn = JoinBtn.GetComponent<Button>();
+        Button _hostbtn = hostBtn.GetComponent<Button>();
+        Button _joinbtn = joinBtn.GetComponent<Button>();
         _hostbtn.onClick.AddListener(SetLobbyName);
         _joinbtn.onClick.AddListener(JoinRoom);
     }
     #endregion
 
     //if player hosts the room
-    public void SetLobbyName()
+    private void SetLobbyName()
     {
         if (!HasInputAuthority)
         {
-            string lobbyName = hostInputField.text;
-            StartGame(lobbyName);
+            StartGameSession();
             Debug.Log("ThisBtnWorks");
         }
     }
 
-    public void StartGame(string lobbyName)
+    public void StartGameSession()
+    //private async Task StartGameSession()
     {
+        // if (_runnerInstance == null)
+        // {
+        //     //Delete comment if working
+        //     Debug.Log("Not working");
+        // }
         if (!HasInputAuthority)
         {
-            var sceneManager = new SceneManage();
-            Runner.StartGame(new StartGameArgs
+            //var sceneManager = GameObject.FindAnyObjectByType<SceneManage>();
+            var sceneManager =
+                Runner.LoadScene(SceneRef.FromPath("Assets/Scenes/GameRoom.unity"), LoadSceneMode.Additive);
+            //instantiate
+            // _runnerInstance = Instantiate(networkRunnerPrefab);
+            string lobbyName = hostInputField.text;
+            var startGameArgs = new StartGameArgs()
             {
                 SessionName = lobbyName,
                 IsOpen = true,
                 IsVisible = true,
-                SceneManager = sceneManager,
-            });
+                // SceneManager = _runnerInstance.GetComponent<NetworkSceneManagerDefault>()
+                //SceneManager = sceneManager,
+                SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>(),
+            };
             //Delete comment if working
             Debug.Log("StartGame(lobbyName) is Functionable");
+            // await _runnerInstance.StartGame(startGameArgs);
+
         }
     }
     //if player is joining the host's room
-    public void JoinRoom()
+    private void JoinRoom()
     {
         if (!HasInputAuthority)
         {
@@ -67,7 +82,7 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
         }
     }
     
-    public async Task JoinLobby()
+    private async Task JoinLobby()
     {
         string lobbyName = hostInputField.text;
         string customname = joinInputField.text;
