@@ -14,25 +14,32 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     #region Variables
     [SerializeField]public TMP_InputField hostInputField;
     [SerializeField]public TMP_InputField joinInputField;
-    [SerializeField]public Button HostBtn;
+    public Button HostBtn;
     [SerializeField]public Button JoinBtn;
     #endregion
     #region Methods
     //onbtn click
-    
+    void Start()
+    {
+        Button btn = yourButton.GetComponent<Button>();
+        btn.onClick.AddListener(SetLobbyName);
+    }
     #endregion
 
     //if player hosts the room
     public void SetLobbyName()
     {
-        string lobbyName = hostInputField.text;
-        StartGame(lobbyName);
+        if (!HasInputAuthority)
+        {
+            string lobbyName = hostInputField.text;
+            StartGame(lobbyName);
+            Debug.Log("ThisBtnWorks");
+        }
     }
 
     private void StartGame(string lobbyName)
     {
-        NetworkRunner runner = FindObjectOfType<NetworkRunner>();
-        runner.StartGame(new StartGameArgs
+        Runner.StartGame(new StartGameArgs
         {
             SessionName = lobbyName,
             IsOpen = true,

@@ -1901,6 +1901,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HostClientScript
   hostInputField: {fileID: 166194822}
   joinInputField: {fileID: 1590346813}
+  HostBtn: {fileID: 723248522}
+  JoinBtn: {fileID: 109811100}
 --- !u!114 &1006163051
 MonoBehaviour:
   m_ObjectHideFlags: 0
