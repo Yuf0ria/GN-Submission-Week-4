@@ -7,21 +7,20 @@ using UnityEngine.UI;
 using Fusion;
 using Fusion.Sockets;
 using System;
-using TMPro;
 
 public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
 {
     #region Variables
-    [SerializeField]public TMP_InputField hostInputField;
-    [SerializeField]public TMP_InputField joinInputField;
-    public Button HostBtn;
+    [SerializeField]public InputField hostInputField;
+    [SerializeField]public InputField joinInputField;
+    [SerializeField]public Button HostBtn;
     [SerializeField]public Button JoinBtn;
     #endregion
     #region Methods
     //onbtn click
     void Start()
     {
-        Button btn = yourButton.GetComponent<Button>();
+        Button btn = HostBtn.GetComponent<Button>();
         btn.onClick.AddListener(SetLobbyName);
     }
     #endregion
@@ -39,17 +38,23 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
 
     private void StartGame(string lobbyName)
     {
-        Runner.StartGame(new StartGameArgs
+        if (HasStateAuthority)
         {
-            SessionName = lobbyName,
-            IsOpen = true,
-            IsVisible = true
-        });
+            Runner.StartGame(new StartGameArgs
+            {
+                SessionName = lobbyName,
+                IsOpen = true,
+                IsVisible = true
+            });
+        }
     }
     //if player is joining the host's room
     public void JoinRoom()
     {
-        Task.Run(async () => await JoinLobby());
+        if (HasInputAuthority)
+        {
+            Task.Run(async () => await JoinLobby());
+        }
     }
     
     public async Task JoinLobby()
