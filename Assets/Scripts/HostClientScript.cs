@@ -1,20 +1,25 @@
+#region Assemblies
 //UI Script of the login Scene
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using Fusion;
 using Fusion.Sockets;
-using System;
+#endregion
 
 public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
 {
     #region Variables
+    //pubic(s)
     [SerializeField]public InputField hostInputField;
     [SerializeField]public InputField joinInputField;
     [SerializeField]public Button HostBtn;
     [SerializeField]public Button JoinBtn;
+    //private(s)
+    private SceneManage GameScene;
     #endregion
     #region Methods
     //onbtn click
@@ -46,6 +51,8 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
                 IsOpen = true,
                 IsVisible = true
             });
+            //run scenemanage.cs
+            GameScene.OnPlayerClickedBtn();
         }
     }
     //if player is joining the host's room
