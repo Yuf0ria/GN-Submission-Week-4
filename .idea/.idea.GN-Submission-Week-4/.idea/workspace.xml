@@ -25,7 +25,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -124,7 +124,7 @@
       <workItem from="1770208228903" duration="2211000" />
       <workItem from="1770210457209" duration="477000" />
       <workItem from="1770210946715" duration="84000" />
-      <workItem from="1770293410247" duration="84000" />
+      <workItem from="1770293410247" duration="493000" />
     </task>
     <servers />
   </component>

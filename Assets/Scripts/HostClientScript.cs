@@ -7,8 +7,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Fusion;
 using Fusion.Sockets;
-using UnityEngine.SceneManagement;
-
 #endregion
 
 public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
@@ -19,9 +17,8 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     [SerializeField]public InputField joinInputField;
     [SerializeField]public Button hostBtn;
     [SerializeField]public Button joinBtn;
-	public UnityEditor.SceneAsset SceneAsset;
-    //private(s)
-	[SerializeField]private string m_SceneName;
+    // private(s)
+    
     #endregion
     #region Methods
     //onbtn click
@@ -39,17 +36,9 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     {
         if (!HasInputAuthority)
         {
-            StartGameSession();
+            //GameSessionStartsHere
             Debug.Log("ThisBtnWorks");
-        }
-    }
-
-    private void StartGameSession()
-        //private async Task StartGameSession()
-    {
-        if (SceneAsset != null)
-        {
-            m_SceneName = SceneAsset.name;
+            //Unactive Panel Here & show game scene
         }
     }
     
