@@ -34,7 +34,7 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     //if player hosts the room
     private void SetLobbyName()
     {
-        if (!HasInputAuthority)
+        if (!HasInputAuthority)//either a proxy or a server
         {
             //GameSessionStartsHere
             Debug.Log("ThisBtnWorks");
