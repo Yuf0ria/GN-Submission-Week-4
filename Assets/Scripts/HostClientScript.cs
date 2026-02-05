@@ -45,29 +45,14 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     }
 
     private void StartGameSession()
-    //private async Task StartGameSession()
+        //private async Task StartGameSession()
     {
         if (SceneAsset != null)
-      {
-          m_SceneName = SceneAsset.name;
-      }
+        {
+            m_SceneName = SceneAsset.name;
+        }
     }
-	public override void OnNetworkSpawn()
-{
-  if (IsServer && !string.IsNullOrEmpty(m_SceneName))
-  {
-      var status = NetworkManager.SceneManager.LoadScene(m_SceneName, LoadSceneMode.Additive);
-      if (status != SceneEventProgressStatus.Started)
-      {
-          Debug.LogWarning($"Failed to load {m_SceneName} " +
-                $"with a {nameof(SceneEventProgressStatus)}: {status}");
-      }
-  }
-}
-	
-	
-
-
+    
     //if player is joining the host's room
     private void JoinRoom()
     {
