@@ -19,7 +19,9 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
     [SerializeField]public InputField joinInputField;
     [SerializeField]public Button hostBtn;
     [SerializeField]public Button joinBtn;
+	public UnityEditor.SceneAsset SceneAsset;
     //private(s)
+	[SerializeField]private string m_SceneName;
     #endregion
     #region Methods
     //onbtn click
@@ -42,37 +44,30 @@ public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
         }
     }
 
-    public void StartGameSession()
+    private void StartGameSession()
     //private async Task StartGameSession()
     {
-        // if (_runnerInstance == null)
-        // {
-        //     //Delete comment if working
-        //     Debug.Log("Not working");
-        // }
-        if (!HasInputAuthority)
-        {
-            //var sceneManager = GameObject.FindAnyObjectByType<SceneManage>();
-            var sceneManager =
-                Runner.LoadScene(SceneRef.FromPath("Assets/Scenes/GameRoom.unity"), LoadSceneMode.Additive);
-            //instantiate
-            // _runnerInstance = Instantiate(networkRunnerPrefab);
-            string lobbyName = hostInputField.text;
-            var startGameArgs = new StartGameArgs()
-            {
-                SessionName = lobbyName,
-                IsOpen = true,
-                IsVisible = true,
-                // SceneManager = _runnerInstance.GetComponent<NetworkSceneManagerDefault>()
-                //SceneManager = sceneManager,
-                SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>(),
-            };
-            //Delete comment if working
-            Debug.Log("StartGame(lobbyName) is Functionable");
-            // await _runnerInstance.StartGame(startGameArgs);
-
-        }
+        if (SceneAsset != null)
+      {
+          m_SceneName = SceneAsset.name;
+      }
     }
+	public override void OnNetworkSpawn()
+{
+  if (IsServer && !string.IsNullOrEmpty(m_SceneName))
+  {
+      var status = NetworkManager.SceneManager.LoadScene(m_SceneName, LoadSceneMode.Additive);
+      if (status != SceneEventProgressStatus.Started)
+      {
+          Debug.LogWarning($"Failed to load {m_SceneName} " +
+                $"with a {nameof(SceneEventProgressStatus)}: {status}");
+      }
+  }
+}
+	
+	
+
+
     //if player is joining the host's room
     private void JoinRoom()
     {

@@ -1402,6 +1402,8 @@ MonoBehaviour:
   joinInputField: {fileID: 658694050}
   hostBtn: {fileID: 723248522}
   joinBtn: {fileID: 109811100}
+  SceneAsset: {fileID: 102900000, guid: 0089a6d32dae09a1f94d0bfa8469038b, type: 3}
+  m_SceneName: 
 --- !u!114 &1006163051
 MonoBehaviour:
   m_ObjectHideFlags: 0
