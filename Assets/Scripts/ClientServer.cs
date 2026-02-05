@@ -17,16 +17,6 @@ public class ClientServer : NetworkBehaviour, INetworkRunnerCallbacks
         });
     }
     
-    protected virtual void OnConnectedToMaster()
-    {
-        Runner.JoinSessionLobby(SessionLobby.ClientServer);
-    }
-
-    protected virtual void OnSceneLoadStart()
-    {
-        Runner.LoadScene("Login"); //Lobby is named login in the scene
-    }
-    
     #region INetworkRunnerCallbacks
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player) { }
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) { }
