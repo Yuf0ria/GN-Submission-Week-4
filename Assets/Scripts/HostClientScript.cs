@@ -11,6 +11,8 @@ using Fusion.Sockets;
 
 public class HostClientScript : NetworkBehaviour, INetworkRunnerCallbacks
 {
+    //don't neet anymore, just create a login with a join button and set the first player 
+    
     #region Variables
     //public(s)
     [SerializeField]public InputField hostInputField;
