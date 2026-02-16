@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45ec025e-ef6e-4644-8eaf-abfdc589f5f0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ClientServer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ClientServer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HostClientScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HostClientScript.cs" afterDir="false" />
-    </list>
+    <list default="true" id="45ec025e-ef6e-4644-8eaf-abfdc589f5f0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +121,7 @@
       <workItem from="1770208228903" duration="2211000" />
       <workItem from="1770210457209" duration="477000" />
       <workItem from="1770210946715" duration="84000" />
-      <workItem from="1770293410247" duration="2668000" />
+      <workItem from="1770293410247" duration="2783000" />
     </task>
     <servers />
   </component>
