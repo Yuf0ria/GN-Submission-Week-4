@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Materials/PlayerMats/Blue.mat.meta
+guid: 86df33767efaa2e159c49ea5f8aeef8e
+========
+guid: 1d4098f08dca0436ebdba9387244bca6
+>>>>>>>> main:Assets/Materials/Ground.mat.meta
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
